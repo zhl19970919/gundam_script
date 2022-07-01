@@ -15,5 +15,5 @@ def gundam_script() -> bool:
     d.app_stop('com.zhiliaoapp.musically')
     return True
 
-
-gundam_script()
+if __name__ == '__main__':
+    gundam_script()
