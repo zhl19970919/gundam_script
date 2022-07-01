@@ -30,7 +30,7 @@
         "key_value_store_name": "1688_detail"
     },
     {
-        "str_in_url": "https://search\\d+-search-hl.amemv.com/aweme/v1/search/item/?_rticket",
+        "str_in_url": "https://.*.amemv.com/aweme/v1/search/item/\\?_rticket",
         "remark": "抖音搜索列表页获取",
         "key_value_store_name": "douyin_search_list"
     }
