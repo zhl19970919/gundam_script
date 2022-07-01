@@ -1,30 +1,37 @@
 [
     {
         "str_in_url": "https://www.amazon.co.jp/dp/",
-        "remark": "亚马逊详情页接口"
+        "remark": "亚马逊详情页接口",
+        "key_value_store_name": "amazon_detail"
     },
     {
         "str_in_url": "https://www.amazon.co.jp/gp/gw/ajax/mshop.html",
-        "remark": "亚马逊主页一级类目获取"
-    },
-    {
-        "str_in_url": "https://www.amazon.co.jp/b?node=",
-        "remark": "亚马逊多级类目获取"
+        "remark": "亚马逊主页一级类目获取",
+        "key_value_store_name": "amazon_first_category"
     },
     {
         "str_in_url": "https://www.amazon.co.jp/gp/bestsellers/",
-        "remark": "亚马逊多级类目获取"
+        "remark": "亚马逊多级类目获取",
+        "key_value_store_name": "amazon_many_category"
     },
     {
         "str_in_url": "https://www.amazon.co.jp/s?rh=",
-        "remark": "亚马逊列表页获取"
+        "remark": "亚马逊列表页获取",
+        "key_value_store_name": "amazon_list"
     },
     {
         "str_in_url": "https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.data.get/1.0/?data=",
-        "remark": "淘宝详情页获取"
+        "remark": "淘宝详情页获取",
+        "key_value_store_name": "taobao_detail"
     },
     {
         "str_in_url": "http://m.1688.com/offer/",
-        "remark": "1688详情页获取"
+        "remark": "1688详情页获取",
+        "key_value_store_name": "1688_detail"
+    },
+    {
+        "str_in_url": "https://search\\d+-search-hl.amemv.com/aweme/v1/search/item/?_rticket",
+        "remark": "抖音搜索列表页获取",
+        "key_value_store_name": "douyin_search_list"
     }
 ]
