@@ -11,9 +11,9 @@ def gundam_script() -> bool:
     d.send_keys("")  # adb广播输入
     d.set_fastinput_ime(False)  # 切换成正常的输入法
     d.send_action("search")
-    time.sleep(5)
     d.app_stop('com.zhiliaoapp.musically')
     return True
+
 
 if __name__ == '__main__':
     gundam_script()
