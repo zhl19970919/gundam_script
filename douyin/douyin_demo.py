@@ -14,3 +14,6 @@ def gundam_script() -> bool:
     time.sleep(5)
     d.app_stop('com.zhiliaoapp.musically')
     return True
+
+
+print(gundam_script())
