@@ -1,0 +1,30 @@
+[
+    {
+        "str_in_url": "https://www.amazon.co.jp/dp/",
+        "remark": "亚马逊详情页接口"
+    },
+    {
+        "str_in_url": "https://www.amazon.co.jp/gp/gw/ajax/mshop.html",
+        "remark": "亚马逊主页一级类目获取"
+    },
+    {
+        "str_in_url": "https://www.amazon.co.jp/b?node=",
+        "remark": "亚马逊多级类目获取"
+    },
+    {
+        "str_in_url": "https://www.amazon.co.jp/gp/bestsellers/",
+        "remark": "亚马逊多级类目获取"
+    },
+    {
+        "str_in_url": "https://www.amazon.co.jp/s?rh=",
+        "remark": "亚马逊列表页获取"
+    },
+    {
+        "str_in_url": "https://trade-acs.m.taobao.com/gw/mtop.taobao.detail.data.get/1.0/?data=",
+        "remark": "淘宝详情页获取"
+    },
+    {
+        "str_in_url": "http://m.1688.com/offer/",
+        "remark": "1688详情页获取"
+    }
+]
