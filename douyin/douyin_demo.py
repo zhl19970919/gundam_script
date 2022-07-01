@@ -3,7 +3,7 @@ import uiautomator2 as u2
 
 
 def gundam_script() -> bool:
-    d = u2.connect("b7ab4c62")
+    d = u2.connect("equipment")
     d.press("home")
     d.app_start('com.zhiliaoapp.musically')
     d.xpath('//*[@resource-id="com.zhiliaoapp.musically:id/exl"]/android.widget.ImageView[2]').click()
@@ -14,6 +14,3 @@ def gundam_script() -> bool:
     time.sleep(5)
     d.app_stop('com.zhiliaoapp.musically')
     return True
-
-
-print(gundam_script())
