@@ -33,5 +33,10 @@
         "str_in_url": "https://.*.amemv.com/aweme/v1/search/item/\\?_rticket",
         "remark": "抖音搜索列表页获取",
         "key_value_store_name": "douyin_search_list"
+    },
+    {
+        "str_in_url": "https://.*-normal-alisg.tiktokv.com/aweme/v1/search/item/\\?",
+        "remark": "tiktok搜索列表页获取",
+        "key_value_store_name": "tiktok_search_list"
     }
 ]
