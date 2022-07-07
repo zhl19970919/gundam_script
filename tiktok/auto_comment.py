@@ -1,5 +1,6 @@
 import time
 import uiautomator2 as u2
+from apify_client import ApifyClient
 
 
 def gundam_script() -> bool:
@@ -16,4 +17,6 @@ def gundam_script() -> bool:
 
 
 if __name__ == '__main__':
+    apify_client = ApifyClient(token='token', api_url='localhost:8080')
+    apify_client.key_value_store()
     gundam_script()
