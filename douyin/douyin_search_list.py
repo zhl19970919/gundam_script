@@ -28,7 +28,8 @@ def push_dingtalk_message(msg: str):
 def gundam_script() -> bool:
     # d = u2.connect('{equipment}')
     try:
-        d = u2.connect("25cb279e")
+        d = u2.connect('{equipment}')
+        #d = u2.connect("25cb279e")
         d.press("home")
         d.app_stop("com.ss.android.ugc.aweme")
         d.app_start("com.ss.android.ugc.aweme")
@@ -38,7 +39,7 @@ def gundam_script() -> bool:
             ctx.when("确定").click()
             ctx.wait_stable()
         d(resourceId="com.ss.android.ugc.aweme:id/e5r").click()
-        d(focused=True).set_text("厨房神器")
+        d(focused=True).set_text("{searchWord}")
         d.send_action("search")
         d(resourceId="com.ss.android.ugc.aweme:id/de8").click()
         d(resourceId="com.ss.android.ugc.aweme:id/ibv", text="最多点赞").click()
