@@ -1,6 +1,23 @@
-
-import utils.push
+import json
+import os
+import requests
 import uiautomator2 as u2
+
+
+def push_dingtalk_message(msg: str):
+    url = 'https://oapi.dingtalk.com/robot/send?access_token' \
+          '=e0e3db9ead607b36ddc1a16ab6fcfaa98d29a9bff31b3f43aca2bfcfbd72f57a '
+    header = {
+        "Content-Type": "application/json"
+    }
+    data = {
+        "msgtype": "text",
+        "text": {
+            "content": f"ActorError:{msg}, ActorFileName:{os.path.basename(__file__)}"
+        }
+    }
+    res = requests.post(url=url, headers=header, data=json.dumps(data)).json()
+    print(res)
 
 
 # 仅适用于抖音18.5.0其他版本未测试xpath
@@ -34,7 +51,7 @@ def gundam_script() -> bool:
                 return True
         return True
     except Exception as e:
-        utils.push.push_dingtalk_message(str(e))
+        push_dingtalk_message(str(e))
         return False
 
 
