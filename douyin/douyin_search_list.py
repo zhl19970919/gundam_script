@@ -1,34 +1,14 @@
-import json
-import os
-import sys
-import time
-import traceback
 
-import requests
+import utils.push
 import uiautomator2 as u2
 
-
-def push_dingtalk_message(msg: str):
-    url = 'https://oapi.dingtalk.com/robot/send?access_token' \
-          '=e0e3db9ead607b36ddc1a16ab6fcfaa98d29a9bff31b3f43aca2bfcfbd72f57a '
-    header = {
-        "Content-Type": "application/json"
-    }
-    data = {
-        "msgtype": "text",
-        "text": {
-            "content": f"ActorError:{msg}, ActorFileName:{os.path.basename(__file__)}"
-        }
-    }
-    res = requests.post(url=url, headers=header, data=json.dumps(data)).json()
-    print(res)
 
 # 仅适用于抖音18.5.0其他版本未测试xpath
 
 def gundam_script() -> bool:
     # d = u2.connect('{equipment}')
     try:
-        d = u2.connect('{equipment}')
+        d = u2.connect('$equipment')
         #d = u2.connect("25cb279e")
         d.press("home")
         d.app_stop("com.ss.android.ugc.aweme")
@@ -39,11 +19,11 @@ def gundam_script() -> bool:
             ctx.when("确定").click()
             ctx.wait_stable()
         d(resourceId="com.ss.android.ugc.aweme:id/e5r").click()
-        d(focused=True).set_text("{searchWord}")
+        d(focused=True).set_text("$searchWord")
         d.send_action("search")
         d(resourceId="com.ss.android.ugc.aweme:id/de8").click()
-        d(resourceId="com.ss.android.ugc.aweme:id/ibv", text="最多点赞").click()
-        d(resourceId="com.ss.android.ugc.aweme:id/ibv", text="一天内").click()
+        d(resourceId="com.ss.android.ugc.aweme:id/ibv", text="$orderBy").click()
+        d(resourceId="com.ss.android.ugc.aweme:id/ibv", text="$publishTime").click()
         d(resourceId="com.ss.android.ugc.aweme:id/de8").click()
         d(resourceId="android:id/text1", text="视频").click()
         count = 0
@@ -54,7 +34,7 @@ def gundam_script() -> bool:
                 return True
         return True
     except Exception as e:
-        push_dingtalk_message(str(e))
+        utils.push.push_dingtalk_message(str(e))
         return False
 
 
